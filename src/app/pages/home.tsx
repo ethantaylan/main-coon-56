@@ -1,20 +1,14 @@
-import Navbar from '../components/navbar/navbar';
-import HeroImg from '../assets/wall.jpg';
+import { Hero } from '../components/hero';
+import { Navbar } from '../components/navbar';
+import { RecentCats } from '../components/recent-cats';
 
 export const Home = () => {
   return (
-    <div className="h-full">
-      <Navbar />
-      <div className="w-full h-full flex justify-between">
-        {/* <div className="w-full bg-slate-100 flex justify-center align-middle"><span>Hello</span></div> */}
-        <div
-          style={{
-            backgroundImage: `url(${HeroImg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'bottom',
-          }}
-          className="w-full"
-        ></div>
+    <div className="font-sans w-full flex justify-center">
+      <div className="pt-10 bg-white flex justify-between flex-col items-center max-w-5xl container">
+        <Navbar />
+        <Hero />
+        <RecentCats />
       </div>
     </div>
   );
