@@ -4,12 +4,14 @@ import { RecentCats } from '../components/recent-cats';
 
 export const Home = () => {
   return (
-    <div className="font-sans w-full flex justify-center">
-      <div className="pt-10 bg-white flex justify-between flex-col items-center max-w-5xl container">
-        <Navbar />
-        <Hero />
+      <div className="font-sans px-20 w-full flex-colum">
+        <div className="pt-10 bg-white w-full justify-center flex flex-col items-center">
+          <Navbar />
+          <Hero />
+        </div>
         <RecentCats />
+
       </div>
-    </div>
+      
   );
 };

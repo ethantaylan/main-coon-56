@@ -1,5 +1,5 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Logo from '../assets/logo.png'
 
 export interface Links {
   title: string;
@@ -17,7 +17,7 @@ export const Navbar = () => {
 
   return (
     <div className="flex justify-between mb-10 text-neutral-600 w-full">
-      <span className="font-bold">Main Coon 56</span>
+      <img width={200} src={Logo} alt='logo' />
       <div>
         {Links.map((link, index) => (
           <NavLink
