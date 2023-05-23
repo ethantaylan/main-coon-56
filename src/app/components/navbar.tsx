@@ -10,16 +10,16 @@ export interface Links {
 export const Navbar = () => {
   const Links: Links[] = [
     { title: 'Accueil', href: '/' },
-    { title: 'Les chats', href: 'les-chats' },
-    { title: 'Prendre rendez-vous', href: 'les-chats' },
-    { title: 'Nos conseils', href: 'contacte' },
+    { title: 'Les chats', href: '/les-chats' },
+    { title: 'Prendre rendez-vous', href: '/prendre-rdv' },
+    { title: 'Nos conseils', href: '/nos-conseils' },
     { title: 'Contacte', href: 'contacte' },
   ];
 
   return (
-    <div className="flex justify-between mb-10 text-neutral-600 w-full">
+    <div className="flex fixed top-0 bg-white px-10 py-7 justify-between mb-10 text-neutral-600 w-full">
       <img width={170} src={Logo} alt="logo" />
-      <div className="flex">
+      <div className="flex items-center">
         {Links.map((link, index) => (
           <NavLink
             className="px-7 last:pr-0 first:pl-0"

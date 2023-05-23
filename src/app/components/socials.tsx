@@ -8,13 +8,16 @@ export interface Socials {
 }
 
 export const Socials = () => {
+
+  const socialsIconSize: number = 18;
+  
   const Socials: Socials[] = [
     {
-      icon: <BsFacebook size={20} />,
+      icon: <BsFacebook size={socialsIconSize} />,
       href: '/facebook',
     },
     {
-      icon: <BsInstagram size={20} />,
+      icon: <BsInstagram size={socialsIconSize} />,
       href: '/instagram',
     },
   ];
@@ -22,7 +25,7 @@ export const Socials = () => {
   return (
     <div className="flex">
       {Socials.map((social) => (
-        <NavLink className={'mx-2'} to={social.href}>
+        <NavLink className={'mx-2 flex items-center'} to={social.href}>
           {social.icon}
         </NavLink>
       ))}
