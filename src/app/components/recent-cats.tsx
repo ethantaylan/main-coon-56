@@ -35,7 +35,7 @@ export const Cats: CatCardProps[] = [
 
 export const RecentCats = () => {
   return (
-      <div className="flex -mt-60">
+      <div className="flex items-center w-full justify-around">
         {Cats.map((cat) => (
           <CatCard
             name={cat.name}

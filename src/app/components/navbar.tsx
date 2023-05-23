@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo.png';
+import { Socials } from './socials';
 
 export interface Links {
   title: string;
@@ -17,11 +18,11 @@ export const Navbar = () => {
 
   return (
     <div className="flex justify-between mb-10 text-neutral-600 w-full">
-      <img width={200} src={Logo} alt='logo' />
-      <div>
+      <img width={170} src={Logo} alt="logo" />
+      <div className="flex">
         {Links.map((link, index) => (
           <NavLink
-            className="px-7 last:pr-0 first:pl-0 font-semibold"
+            className="px-7 last:pr-0 first:pl-0"
             key={index}
             to={link.href}
           >
@@ -29,6 +30,7 @@ export const Navbar = () => {
           </NavLink>
         ))}
       </div>
+        <Socials />
     </div>
   );
 };

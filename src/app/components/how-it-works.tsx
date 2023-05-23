@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export const HowItWorks = () => {
-  return (
-    <div className='w-full flex'>
-        
-    </div>
-  )
-}
+  return <div className="w-full flex"></div>;
+};
