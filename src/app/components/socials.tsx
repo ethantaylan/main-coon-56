@@ -25,7 +25,7 @@ export const Socials = () => {
   return (
     <div className="flex">
       {Socials.map((social) => (
-        <NavLink className={'mx-2 flex items-center'} to={social.href}>
+        <NavLink className={'mx-4 flex items-center'} to={social.href}>
           {social.icon}
         </NavLink>
       ))}

@@ -7,11 +7,10 @@ export interface Links {
   href: string;
 }
 
-export const Navbar = () => {
+export const Navbar: React.FC = () => {
   const Links: Links[] = [
     { title: 'Accueil', href: '/' },
     { title: 'Les chats', href: '/les-chats' },
-    { title: 'Prendre rendez-vous', href: '/prendre-rdv' },
     { title: 'Nos conseils', href: '/nos-conseils' },
     { title: 'Contacte', href: 'contacte' },
   ];
@@ -30,7 +29,7 @@ export const Navbar = () => {
           </NavLink>
         ))}
       </div>
-        <Socials />
+      <Socials />
     </div>
   );
 };
