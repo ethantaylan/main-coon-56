@@ -2,7 +2,7 @@ import { Badges } from '../components/badges';
 import { Hero } from '../components/hero';
 import { MaineCoonDescription } from '../components/maine-coon-description';
 import { Navbar } from '../components/navbar';
-import { RecentCats } from '../components/recent-cats';
+import { Cats } from '../components/cats';
 
 export const Home = () => {
   return (
@@ -11,9 +11,7 @@ export const Home = () => {
       <Hero />
       <Badges />
       <MaineCoonDescription />
-
-      <RecentCats />
-
+      <Cats />
     </div>
   );
 };

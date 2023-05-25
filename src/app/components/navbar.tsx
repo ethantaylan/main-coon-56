@@ -12,7 +12,7 @@ export const Navbar: React.FC = () => {
     { title: 'Accueil', href: '/' },
     { title: 'Les chats', href: '/les-chats' },
     { title: 'Nos conseils', href: '/nos-conseils' },
-    { title: 'Contacte', href: 'contacte' },
+    { title: 'Contact', href: 'contact' },
   ];
 
   return (
