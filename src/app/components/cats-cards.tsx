@@ -4,7 +4,7 @@ export interface CatCardProps {
   name: string;
   race: string;
   description: string;
-  onmMoreInfo: () => void;
+  onmMoreInfo?: () => void;
   img: string;
 }
 
