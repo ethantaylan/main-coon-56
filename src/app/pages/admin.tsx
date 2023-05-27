@@ -8,6 +8,7 @@ import { AddNewCatModal } from '../admin/add-new-cat-modal';
 export const Admin = () => {
   const [cats, setCats] = React.useState<CatsInterface[]>([]);
   const [isModal, setIsModal] = React.useState<boolean>(false);
+  const [isAdmin, setIsAdmin] = React.useState<boolean>(false);
 
   const getCats = async () => {
     const { data } = await supabase.from('cats').select('*');
@@ -29,6 +30,29 @@ export const Admin = () => {
     getCats();
   }, []);
 
+  React.useEffect(() => {
+    if (window.location.href.includes('admin')) {
+      console.log('true');
+      setIsAdmin(true);
+    } else {
+      console.log('false');
+      setIsAdmin(false);
+    }
+
+    // removeCat();
+  }, []);
+
+  // const removeCat = async () => {
+  //   const { data, error } = await supabase
+  //     .from('cats')
+  //     .delete()
+  //     .eq('cats', catName);
+
+  //   const { data: forDelete } = await supabase.from('cats').select('name');
+
+  //   console.log(forDelete);
+  // };
+
   return (
     <div>
       <button onClick={() => setIsModal(true)}>Add new cat</button>
@@ -49,6 +73,8 @@ export const Admin = () => {
               throw new Error('Function not implemented.');
             }}
             image={cat.image}
+            isUserAdmin={isAdmin}
+            // onCatDelete={() => removeCat()}
           />
         ))}
       </div>
