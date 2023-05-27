@@ -1,4 +1,4 @@
-import BannerImg from '../assets/hero3.jpg';
+import BannerImg from '../assets/hero3.png';
 
 export const Hero: React.FC = () => {
   const bannerStyle: React.CSSProperties = {

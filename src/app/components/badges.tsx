@@ -4,7 +4,7 @@ import { ImPriceTags } from 'react-icons/im';
 
 export const Badges: React.FC = () => {
   return (
-    <div className="mt-20 flex w-full justify-around items-center">
+    <div className="mt-28 flex w-full justify-around items-center">
       <div className="flex  text-neutral-700 items-center flex-col">
         <RxPencil2
           className="w-24 h-24 flex flex-col justify-center border-neutral-100 text-neutral-700 items-center p-2"

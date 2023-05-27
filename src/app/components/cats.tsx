@@ -1,17 +1,10 @@
 import React from 'react';
 import { supabase } from '../supabase';
 import { CatCard } from './cats-cards';
-
-export interface Cats {
-  name: string;
-  image: string;
-  description: string;
-  race: string;
-  price: number;
-}
+import { Cats as CatsInterface } from './index';
 
 export const Cats = () => {
-  const [cats, setCats] = React.useState<Cats[]>([]);
+  const [cats, setCats] = React.useState<CatsInterface[]>([]);
 
   React.useEffect(() => {
     getCats();
@@ -20,12 +13,11 @@ export const Cats = () => {
   const getCats = async () => {
     const { data } = await supabase.from('cats').select('*');
     if (data) {
-      const mappedCats: Cats[] = data.map((cat: any) => ({
+      const mappedCats: CatsInterface[] = data.map((cat: any) => ({
         name: cat.name,
         image: cat.image,
         description: cat.description,
         race: cat.race,
-        price: cat.price,
       }));
 
       setCats(mappedCats);
@@ -36,13 +28,14 @@ export const Cats = () => {
 
   return (
     <div className="flex items-center w-full justify-around">
-      {cats.map((cat) => (
+      {cats.map((cat: CatsInterface, index: number) => (
         <CatCard
+          key={index}
           name={cat.name}
           race={cat.race}
           description={cat.description}
           onmMoreInfo={() => console.log('test')}
-          img={cat.image}
+          image={cat.image}
         />
       ))}
     </div>

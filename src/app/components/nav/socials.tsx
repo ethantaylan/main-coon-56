@@ -8,7 +8,7 @@ export interface Socials {
 }
 
 export const Socials = () => {
-  const socialsIconSize: number = 18;
+  const socialsIconSize = 18;
 
   const Socials: Socials[] = [
     {

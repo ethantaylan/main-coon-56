@@ -1,19 +1,12 @@
 import React from 'react';
+import { Cats } from '.';
 
-export interface CatCardProps {
-  name: string;
-  race: string;
-  description: string;
-  onmMoreInfo?: () => void;
-  img: string;
-}
-
-export const CatCard: React.FC<CatCardProps> = ({
+export const CatCard: React.FC<Cats> = ({
   name,
   race,
   description,
   onmMoreInfo,
-  img,
+  image,
 }) => {
   return (
     <div
@@ -23,7 +16,7 @@ export const CatCard: React.FC<CatCardProps> = ({
       <div className="flex flex-col">
         <img
           className="rounded-md h-48 mb-1 w-full object-cover"
-          src={img}
+          src={image}
           alt="cat card"
         />
         <div className="h-auto text-center flex- flex-col">

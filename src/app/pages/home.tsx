@@ -1,7 +1,7 @@
 import { Badges } from '../components/badges';
 import { Hero } from '../components/hero';
 import { MaineCoonDescription } from '../components/maine-coon-description';
-import { Navbar } from '../components/navbar';
+import { Navbar } from '../components/nav/navbar';
 import { Cats } from '../components/cats';
 
 export const Home = () => {
