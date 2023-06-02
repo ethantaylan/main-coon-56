@@ -3,6 +3,7 @@ import { Cats } from '.';
 
 interface CatCardProps extends Cats {
   onCatDelete?: () => void;
+  onClick?: () => void
 }
 
 export const CatCard: React.FC<CatCardProps> = ({
@@ -16,7 +17,7 @@ export const CatCard: React.FC<CatCardProps> = ({
 }) => {
   return (
     <div
-      style={{ width: 320 }}
+      style={{ width: 320, height: 400 }}
       className="mb-60 rounded-md mt-20 mr-6 bg-opacity-20 backdrop-blur-xl backdrop-brightness-150 w-full p-5 flex bg-white shadow-slate-200 shadow-xl"
     >
       <div className="flex w-full flex-col">

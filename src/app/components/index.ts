@@ -6,6 +6,7 @@ export interface Cats {
   image: string;
   file?: any;
   isUserAdmin?: boolean;
+  id?: number
 }
 
 export interface Inputs {

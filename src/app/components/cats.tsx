@@ -5,6 +5,7 @@ import { Cats as CatsInterface } from './index';
 
 export const Cats = () => {
   const [cats, setCats] = React.useState<CatsInterface[]>([]);
+  const [selectedCat, setSelectedCat] = React.useState<string>('')
 
   React.useEffect(() => {
     getCats();
@@ -18,6 +19,7 @@ export const Cats = () => {
         image: cat.image,
         description: cat.description,
         race: cat.race,
+        id: cat.id
       }));
 
       setCats(mappedCats);
@@ -25,6 +27,12 @@ export const Cats = () => {
       setCats([]);
     }
   };
+
+  console.log(selectedCat)
+
+  // const deleteCat = async () => {
+  //   const { data } = supabase.from('cats').delete().eq('name',);
+  // };
 
   return (
     <div className="flex items-center w-full justify-around">
@@ -36,6 +44,7 @@ export const Cats = () => {
           description={cat.description}
           onmMoreInfo={() => console.log('test')}
           image={cat.image}
+          onCatDelete={() => setSelectedCat(cat.name)}
         />
       ))}
     </div>

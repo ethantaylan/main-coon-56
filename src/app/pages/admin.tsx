@@ -19,6 +19,7 @@ export const Admin = () => {
         description: cat.description,
         race: cat.race,
         price: cat.price,
+        id: cat.id,
       }));
 
       setCats(mappedCats);
@@ -38,20 +39,12 @@ export const Admin = () => {
       console.log('false');
       setIsAdmin(false);
     }
-
-    // removeCat();
   }, []);
 
-  // const removeCat = async () => {
-  //   const { data, error } = await supabase
-  //     .from('cats')
-  //     .delete()
-  //     .eq('cats', catName);
-
-  //   const { data: forDelete } = await supabase.from('cats').select('name');
-
-  //   console.log(forDelete);
-  // };
+  const deleteCat = async (catId?: number) => {
+    await supabase.from('cats').delete().eq('id', catId);
+    getCats();
+  };
 
   return (
     <div>
@@ -74,7 +67,7 @@ export const Admin = () => {
             }}
             image={cat.image}
             isUserAdmin={isAdmin}
-            // onCatDelete={() => removeCat()}
+            onCatDelete={() => deleteCat(cat.id)}
           />
         ))}
       </div>
