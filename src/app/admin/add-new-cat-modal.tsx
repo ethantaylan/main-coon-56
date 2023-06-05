@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal } from '../components/modal';
 import { supabase } from '../supabase';
 import { Cats, Inputs } from '../components';
+import { PhotoIcon, PlusIcon } from '../icons/icons';
 
 export interface AddNewCatModalProps {
   onClose: () => void;
@@ -76,13 +77,16 @@ export const AddNewCatModal: React.FC<AddNewCatModalProps> = ({
     onClick();
   };
 
+  const uploadButton = document.getElementById('file-upload-button');
+  console.log(uploadButton);
+
   const inputFileRef = React.useRef<HTMLInputElement>(null);
 
   return (
     <Modal isOpen={isModal} onClose={onClose}>
-      <form className="p-5 flex flex-col">
+      <form className="p-10 flex flex-col">
         {inputs.map((input: Inputs, index: number) => (
-          <div key={index} className="flex flex-col">
+          <div key={index} className="flex mb-3 flex-col">
             <label className="text-slate-500" htmlFor={input.name}>
               {input.text}
             </label>
@@ -96,13 +100,25 @@ export const AddNewCatModal: React.FC<AddNewCatModalProps> = ({
             />
           </div>
         ))}
-        <input ref={inputFileRef} type="file" accept="image/*" />
+
+        <label className="py-2 rounded" htmlFor="upload-button">
+          {' '}
+          <span className='text-slate-500'>Ajouter une photo : {PhotoIcon('h-6 w-6')}</span>
+        </label>
+        <input
+          ref={inputFileRef}
+          id="upload-button"
+          type="file"
+          accept="image/*"
+          hidden
+        />
+
         <button
           onClick={(event) => {
             addNewCat();
             event.preventDefault();
           }}
-          className="my-3 p-2 px-4 bg-cyan-400 rounded text-white"
+          className="mt-10 p-2 px-4 bg-orange-300 rounded text-white"
         >
           Ajouter un chat
         </button>

@@ -4,7 +4,7 @@ export interface Cats {
   description: string;
   onmMoreInfo?: () => void;
   image: string;
-  file?: any;
+  file?: File;
   isUserAdmin?: boolean;
   id?: number
 }

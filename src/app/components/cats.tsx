@@ -1,6 +1,6 @@
 import React from 'react';
 import { supabase } from '../supabase';
-import { CatCard } from './cats-cards';
+import { CatCard } from './cat-card';
 import { Cats as CatsInterface } from './index';
 
 export const Cats = () => {
@@ -27,12 +27,6 @@ export const Cats = () => {
       setCats([]);
     }
   };
-
-  console.log(selectedCat)
-
-  // const deleteCat = async () => {
-  //   const { data } = supabase.from('cats').delete().eq('name',);
-  // };
 
   return (
     <div className="flex items-center w-full justify-around">
