@@ -77,9 +77,6 @@ export const AddNewCatModal: React.FC<AddNewCatModalProps> = ({
     onClick();
   };
 
-  const uploadButton = document.getElementById('file-upload-button');
-  console.log(uploadButton);
-
   const inputFileRef = React.useRef<HTMLInputElement>(null);
 
   return (
@@ -100,17 +97,12 @@ export const AddNewCatModal: React.FC<AddNewCatModalProps> = ({
             />
           </div>
         ))}
-
-        <label className="py-2 rounded" htmlFor="upload-button">
-          {' '}
-          <span className='text-slate-500'>Ajouter une photo : {PhotoIcon('h-6 w-6')}</span>
-        </label>
+        
         <input
           ref={inputFileRef}
           id="upload-button"
           type="file"
           accept="image/*"
-          hidden
         />
 
         <button
