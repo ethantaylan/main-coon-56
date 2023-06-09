@@ -18,12 +18,12 @@ export const CatCard: React.FC<CatCardProps> = ({
   return (
     <div
       style={{ width: 320, height: 'auto' }}
-      className="rounded-md m-5 bg-opacity-20 backdrop-blur-xl backdrop-brightness-150 w-full p-5 flex bg-white shadow-slate-200 shadow-xl"
+      className="rounded-xl m-5 bg-opacity-20 w-full p-5 flex shadow-slate-300 shadow-2xl"
     >
       <div className="flex w-full flex-col">
         <img
           style={{height: 200}}
-          className="rounded-md mb-1 w-full object-cover"
+          className="rounded-md border mb-1 w-full object-cover"
           src={image}
           alt="cat card"
         />

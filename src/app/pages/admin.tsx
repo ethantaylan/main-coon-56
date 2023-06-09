@@ -1,15 +1,17 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Cats as CatsInterface } from '../components/index';
 import { supabase } from '../supabase';
 import { CatCard } from '../components/cat-card';
 import { AddNewCatModal } from '../admin/add-new-cat-modal';
-import { PlusIcon } from '../icons/icons';
+import { ArrowBackIcon, PlusIcon } from '../icons/icons';
 
 export const Admin = () => {
   const [cats, setCats] = React.useState<any>([]);
   const [isModal, setIsModal] = React.useState<boolean>(false);
   const [isAdmin, setIsAdmin] = React.useState<boolean>(false);
+
+  const navigate = useNavigate();
 
   const getCats = async () => {
     const { data } = await supabase.from('cats').select('*');
@@ -46,10 +48,7 @@ export const Admin = () => {
   };
 
   return (
-    <React.Fragment>
-      <button className="px-2 bg-slate-500" onClick={() => setIsModal(true)}>
-        Add new cat
-      </button>
+    <div className='p-5'>
       <AddNewCatModal
         onClose={() => setIsModal(false)}
         isModal={isModal}
@@ -58,7 +57,13 @@ export const Admin = () => {
           getCats();
         }}
       />
-      <NavLink to="/">Home</NavLink>
+      <span
+        className="flex font-semibold cursor-pointer my-5 items-center justify-center"
+        onClick={() => navigate('/')}
+      >
+        {ArrowBackIcon('h-6 w-6 mr-2')} Retour à la page d'acceuil
+      </span>
+      <p className='text-slate-500'>Administration de la page</p>
       <div className="flex flex-wrap">
         {cats.map((cat: CatsInterface, index: number) => (
           <CatCard
@@ -81,6 +86,6 @@ export const Admin = () => {
           {PlusIcon('h-16 w-16 mt-5')}
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
